@@ -1,0 +1,65 @@
+# reverse a string or number
+
+str="Welcome to codeing";
+print(str[::-1])
+
+strlist= list(str)
+print(strlist[::-1])
+
+n = len(strlist)
+i=0
+j= n-1
+if(n%2==0):
+    while(i<j):
+        temp = strlist[i]
+        strlist[i] = strlist[j]
+        strlist[j] = temp
+        i+=1
+        j-=1
+else:
+    while(i!=j):
+        temp = strlist[i]
+        strlist[i] = strlist[j]
+        strlist[j] = temp
+        i+=1
+        j-=1
+print(strlist)
+
+# max and min in array o(n)
+max=-999999
+min=999999
+
+arr = [2,44,22,774,65,3,-1, -34532,554335,22235,43,-454]
+
+for i in arr:
+    if(i>max):
+        max= i
+    if(i<min):
+        min = i
+print(max," ",min)
+
+# Kth smallest element o(nlogk)
+arr1 = arr
+arr1.sort()
+k= 4
+print((arr1[k-1]))
+
+import heapq
+
+arr2 = arr
+k= 4
+heapq.heapify(arr2)
+for i in range(0,k-1):
+    heapq.heappop(arr2)
+    heapq.heapify(arr2)
+
+print(arr2[0])
+
+# Sort an array of 0s, 1s and 2s 
+
+arr = [0,0,2,1,0]
+li = [0,0,0]
+
+for i in arr:
+    li[i]+=1
+print(li)
